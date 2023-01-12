@@ -29,7 +29,7 @@ def bind_color(widget, item):
     """bind data from the store object to the widget"""
     label = item.get_child()
     obj = item.get_item()
-    label.set_label(obj.fruit)
+    label.set_label(obj.color)
 
 
 def on_activate(app):
@@ -56,7 +56,7 @@ def on_activate(app):
     color_col.set_fixed_width(200)
     color_factory = Gtk.SignalListItemFactory()
     color_factory.connect("setup", setup)
-    color_factory.connect("bind", bind_fruit)
+    color_factory.connect("bind", bind_color)
     color_col.set_factory(color_factory)
     column_view.append_column(color_col)
     selection = Gtk.SingleSelection()
